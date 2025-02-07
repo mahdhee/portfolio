@@ -197,7 +197,7 @@ header .content-fit nav ul li a:hover::after {
 
 /* Paragraph Styles */
 p{ 
-    padding-top: 0;
+    padding-top: 125px;
     font-size: 20px;
     text-align: justify;
     text-justify: inter-word;
