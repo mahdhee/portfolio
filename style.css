@@ -1,0 +1,495 @@
+/* Importing fonts */
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+
+/* General styles */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;   /* Hides default cursor */
+}
+
+/* Banner Section */
+main .banner {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin-top: -70px;
+}
+#dotsCanvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Prevent interaction with other elements */
+    z-index: -100; /* Ensure it's in the background */
+}
+
+.cursor {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #ffffff;
+    border-radius: 100%;
+    pointer-events: none;
+    box-shadow: 0 0 75px 35px #00ffff;
+    transition: transform s linear;
+    z-index: 500;
+}
+.banner {
+    position: relative;
+}
+
+.banner #dotsCanvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -100;
+}
+
+/* Custom Glowing Cursor */
+.cursor {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #ffffff;
+    border-radius: 100%;
+    pointer-events: none;
+    box-shadow: 0 0 75px 35px #00ffff;
+    transition: transform s linear;
+    z-index: 500;
+}
+
+/* Body and Global Text Styles */
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #313131;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+/* Hide default scrollbar */
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Description Section */
+main .descrption {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+/* Section Styles */
+.section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Controls space between sections */
+}
+
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+
+/* Header Styles */
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Ensure the header is on top */
+    backdrop-filter: blur(20px);
+    background-color: #0c0c0c11;
+}
+
+header a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset!important;
+    padding-block: unset!important;
+}
+
+header .content-fit nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+/* Logo Styling */
+header .logo a {
+    display: inline-block; /* Make the logo's link an inline block */
+}
+
+header .logo img {
+    cursor: pointer;
+    max-width: 100px; /* Adjust the max-width of the logo */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Navigation Hover Effects */
+header .content-fit nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px; /* Default font size */
+    position: relative;
+    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+header .content-fit nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #00ffffb3; /* Underline color */
+    transition: width 0.3s ease-in-out;
+}
+
+header .content-fit nav ul li a:hover {
+    color: #00ffffb3; /* Text color */
+    font-size: 18px; /* Slightly larger text on hover */
+}
+
+header .content-fit nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Paragraph Styles */
+p{ 
+    padding-top: 0;
+    font-size: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Title Styles */
+.title1 {
+    position: relative;
+    -webkit-text-stroke: 0.3vw #115555;
+}
+
+.title1::before {
+    content: attr(data-text);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #00ffffb3;
+    -webkit-text-stroke: 0vw #00ffffb3;
+    border-right: 2px solid #00ffffb3;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 0%;
+    }
+    70% {
+        width: 61%;
+    }
+}
+
+/* Banner Title */
+#banner .title {
+    color: #00ffffb3;
+    font-size: 11em;
+    font-family: "devil breeze";
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+
+#banner .title::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0.5em;
+    inset: 0.66em 0 0 0;
+    z-index: -1;
+    color: #00ffffb3;
+}
+
+/* Title1 Styling */
+#banner .title1 {
+    color: #ffffff;
+    font-size: 11em;
+    font-family: "devil breeze";
+    font-weight: bold;
+    position: relative;
+    text-align: left;
+}
+
+#banner .title1::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0.5em;
+    inset: 0.66em 0 0 0;
+    z-index: -1;
+    color: #00ffffb3;
+}
+
+/* Decoration Class */
+.section .decorate {
+    position: absolute;
+}
+
+/* Intro Section */
+#intro .content-fit {
+    display: flex;
+    gap: 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Number Styling */
+.section .number {
+    font-family: "devil breeze";
+    font-size: 15em;
+    font-weight: bold;
+}
+
+/* Content Title Styling */
+.section .content-fit .title {
+    font-family: "devil breeze";
+    font-size: 5em;
+    font-weight: bold;
+}
+
+/* Link Hover Effects */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px #00ffff, 0 0 20px #00ffff; /* Glowing effect */
+    font-size: 1.05em;
+}
+
+/* Description Section */
+#description .content-fit {
+    padding-right: 30%;
+}
+
+#description .number {
+    font-size: 5em;
+}
+
+#description .title {
+    font-size: 7em;
+    font-weight: 500;
+}
+
+/* Contact Section */
+#contact .content-fit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#contact table {
+    width: min(800px, 90vw);
+    padding-top: 2em;
+    font-size: 2em;
+    margin: auto;
+}
+
+#contact table td {
+    padding-block: 0.5em;
+    border-bottom: 1px dashed #445022;
+}
+
+#contact table td:nth-child(1) {
+    text-align: left;
+    font-weight: 500;
+}
+
+#contact table td:nth-child(2) {
+    text-align: right;
+    font-weight: 200;
+}
+
+#contact .sign {
+    font-family: 'Bimbo', sans-serif;
+    font-size: 5em;
+}
+
+/* Fullscreen Background Box */
+.box {
+    width: 100vw;  /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    border-radius: 0; /* Optional: Remove rounded corners if not needed */
+    background-color: #1b1930;
+    position: absolute; /* Ensures it covers the whole screen */
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.box::after,
+.box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    --angle: 0deg;
+    background-image: conic-gradient(
+        from var(--angle), #97B8FF, #7191CC, #4C6A99, #264366, #001C33, #001C33, #264366, #7191CC, #97B8FF);
+    animation: autoRotate 5s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 5px;
+    box-sizing: unset;
+}
+
+.box::after {
+    filter: blur(250px);
+}
+svg {
+    display: flex;
+    overflow: visible;
+
+    height: 1.5px;
+}
+#animatedSVG path {
+
+    justify-content: center;
+    align-items: center;
+    fill: #ffffff;
+    stroke-dasharray: 500;  /* Adjust to match the path length */
+    stroke-dashoffset: 500;
+    animation: draw 1s linear infinite alternate;
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 500;
+        opacity: 1;
+    }
+    to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+
+/* Footer Styles */
+footer {
+    /* background-color: #0c0c0c; Dark background for the footer */
+    color: #fff; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 5px; /* Add padding around the footer content */
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-content p {
+    margin: 0;
+    align-items: center;
+    font-size: 14px; /* Set the font size for the copyright text */
+}
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 1023px) {
+    #banner .title {
+        font-size: 5em;
+    }
+
+    #intro .content-fit {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #banner .title {
+        font-size: 3em;
+    }
+
+    #intro .content-fit {
+        flex-direction: column;
+    }
+
+    .section .number {
+        font-size: 5em;
+    }
+
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+
+    #description .content-fit {
+        padding-right: 0;
+    }
+
+    #contact table {
+        font-size: 1em;
+    }
+
+    #contact .sign {
+        font-size: 2em;
+    }
+
+    #container3D {
+        position: absolute;
+    }
+}
